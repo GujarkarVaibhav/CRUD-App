@@ -23,18 +23,17 @@ public class ProductController {
         return productService.saveProducts(products) ;
     }
 
-
-    @GetMapping("/get/{id}")
+    @GetMapping("/productById/{id}")
     public Product getProduct(@PathVariable int id){
         return productService.getProduct(id) ;
     }
 
-    @GetMapping("/get/{name}")
+    @GetMapping("/productByName/{name}")
     public Product getProduct(@PathVariable String name){
         return productService.getProductByName(name) ;
     }
 
-    @GetMapping("/getProducts")
+    @GetMapping("/products")
     public List<Product> getProducts(){
         return productService.getProducts() ;
     }

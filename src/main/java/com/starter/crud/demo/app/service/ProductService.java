@@ -34,7 +34,7 @@ public class ProductService {
 
     public String deleteProduct(int id){
         productRepository.deleteById(id);
-        return "Product with Id: {id} deleted" ;
+        return String.format("Product with Id: %d updated" , id ) ;
     }
 
     public String updateProduct(Product product){
@@ -43,7 +43,7 @@ public class ProductService {
         existingProduct.setPrice(product.getPrice());
         existingProduct.setQuantity(product.getQuantity());
         productRepository.save(existingProduct) ;
-        return "Product with Id: {id} updated" ;
+        return String.format("Product with Id: %d updated" , product.getId() );
     }
 
 
